@@ -47,11 +47,12 @@ def q5
   p array2.empty?
 end
 
+##################　訂正（変数をわかりやすいものに変更）
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  p numbers1.map! { |x| x * 10 }
+  p numbers1.map! { |num| num * 10 }
 end
 
 def q7
@@ -63,36 +64,40 @@ def q7
   p array
 end
 
+################# 訂正（誤字）
 def q8
+
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
   programming_languages.map!(&:capitalize)
-  upper_case_programming_languages ＝　programming_languages.map(&:upcase)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
 end
 
+################# 訂正（変数をわかりやすいものに変更, each.with_indexを使用）
 def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each_with_index {|value, index|
-    puts "会員No.#{index + 1 }  #{value}さん"
+  names.each.with.index(1) {|name, i|
+    puts "会員No.#{i}  #{names}さん"
   }
 
 end
 
+################# 訂正（()やthen抜きでif文を作成）
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
   foods.each do |i|
-    if (i.include?("うに")) then 
-      print ("好物です")
+    if i.include?("うに")
+      p ("好物です")
     else 
-      print ("まぁまぁ好きです")
+      p ("まぁまぁ好きです")
     end
   end  
 
@@ -162,7 +167,15 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+   end
 
+ def info
+  puts "名前：#{@name}\n年齢：#{@age}\n性別：#{@gender}"
+ end
 end
 
 def q17
